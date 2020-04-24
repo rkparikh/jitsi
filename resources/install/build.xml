@@ -321,7 +321,7 @@
         <property name="windows.package.name.suffix" value="x86.exe"/>
         <property name="windows.msi.package.name.suffix" value="x86.msi"/>
         <property name="windows.arch" value="32"/>
-        <property name="mingw.home" value="C:/mingw/x86" />
+        <property name="mingw.home" value="${mingw.path}" />
         <antcall target="build-installation-wix-base" />
     </target>
 
@@ -336,7 +336,7 @@
         <property name="windows.package.name.suffix" value="x64.exe"/>
         <property name="windows.msi.package.name.suffix" value="x64.msi"/>
         <property name="windows.arch" value="64"/>
-        <property name="mingw.home" value="C:/mingw/x64" />
+        <property name="mingw.home" value="${mingw64.path}"/>
         <antcall target="build-installation-wix-base" />
     </target>
 
@@ -621,7 +621,7 @@
                 todir="${light.dir}"
                 overwrite="true" />
 
-        <property name="wix.home" value="C:\Program Files\WiX" />
+        <property name="wix.home" value="${wix.dir}" />
 
         <!-- Execute heat.exe -->
         <exec

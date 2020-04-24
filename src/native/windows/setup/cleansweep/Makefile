@@ -25,8 +25,10 @@ ifeq ($(wildcard /bin/cygpath.*),/bin/cygpath.exe)
     target.dir := $(shell cygpath --mixed "$(TARGET_DIR)")
     cygwin.target.dir := $(shell cygpath --unix "$(TARGET_DIR)")
 else
-    target.dir := "$(TARGET_DIR)"
-    cygwin.target.dir := "$(TARGET_DIR)"
+###    target.dir := "$(TARGET_DIR)"
+###    cygwin.target.dir := "$(TARGET_DIR)"
+    target.dir := $(TARGET_DIR)
+    cygwin.target.dir := $(TARGET_DIR)
 endif
 
 CC = $(MINGW_HOME)/bin/gcc.exe
